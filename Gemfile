@@ -14,7 +14,7 @@ gem 'jquery-rails'
 # Use unicorn as the web server
 gem 'unicorn'
 
-group :production, :staging do
+group :production  do
   gem "pg"
   gem 'therubyracer-heroku', '0.8.1.pre3'
 end
