@@ -14,7 +14,11 @@ gem 'jquery-rails'
 # Use unicorn as the web server
 gem 'unicorn'
 
-gem 'therubyracer-heroku', '0.8.1.pre3'
+group :production, :staging do
+  gem "pg"
+  gem 'therubyracer-heroku', '0.8.1.pre3'
+end
+
 
 # Deploy with Capistrano
 # gem 'capistrano'
