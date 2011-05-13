@@ -1,0 +1,16 @@
+<header>
+  <ul>
+    <% Album.all.each do |album| %>
+    <a href="/albums/<%= album.id %>">
+      <li data-album-name="<%= album.name %>" data-album-flickbook="<%= album.flickbook_url %>">
+        <img height="48" width="48" src="<%= album.thumbnail_32_url %>" >          
+      </li>
+    </a>
+    <% end %>
+  </ul>
+</header>
+
+<div id="highlight" style="display:none">
+  <a href="#"><article></article></a>
+  <p>Album Name</p>
+</div>

@@ -1,0 +1,2 @@
+module Albums::PhotosHelper
+end

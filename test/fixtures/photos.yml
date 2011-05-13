@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  full_url: MyString
+  large_url: MyString
+  medium_square_url: MyString
+  album_id: 1
+
+two:
+  full_url: MyString
+  large_url: MyString
+  medium_square_url: MyString
+  album_id: 1

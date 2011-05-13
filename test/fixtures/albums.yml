@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  safe_name: MyString
+  flickbook_url: MyString
+  photographer: MyString
+
+two:
+  name: MyString
+  description: MyString
+  safe_name: MyString
+  flickbook_url: MyString
+  photographer: MyString
