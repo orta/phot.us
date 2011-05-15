@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110513194442) do
+ActiveRecord::Schema.define(:version => 20110515115500) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(:version => 20110513194442) do
     t.string   "photographer"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "thumbnail_32_url"
+    t.string   "headline_photo_url"
+    t.string   "headline_thumbnail_32_url"
   end
 
 # Could not dump table "photos" because of following StandardError

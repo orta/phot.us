@@ -4,6 +4,9 @@ class Photo < ActiveRecord::Base
 
   after_create :shuffle_album_thumbnail
 
+  scope :landscape, where("photos.is_landscape = 'true'")
+  scope :portrait, where("photos.is_landscape = 'false'")
+    
   def self.random
     if (c = count) > 0
       first(:offset => rand(c)) 

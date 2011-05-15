@@ -3,6 +3,8 @@ class AlbumsController < ApplicationController
   # GET /albums.json
   def index
     @albums = Album.all
+    @first_6_albums = @albums.shift 
+
 
     respond_to do |format|
       format.html # index.html.erb

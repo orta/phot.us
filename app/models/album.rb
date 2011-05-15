@@ -1,10 +1,13 @@
 class Album < ActiveRecord::Base
   has_many :photos
+  
   validates_presence_of :name, :description, :flickbook_url
   
   def shuffle_thumbnail!
-    self.thumbnail_32_url = photos.random.thumbnail_32_url
-    save!
+    photo =  photos.landscape.random
+    self.headline_photo_url = photo.thumbnail_320_url
+    self.headline_thumbnail_32_url = photo.thumbnail_320_url
+    self.save!
   end
 
   def create_layouts
