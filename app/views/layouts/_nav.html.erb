@@ -3,7 +3,8 @@
     <% Album.all.each do |album| %>
     <a href="/albums/<%= album.id %>">
       <li data-album-name="<%= album.name %>" data-album-flickbook="<%= album.flickbook_url %>">
-        <img height="48" width="48" src="<%= album.thumbnail_32_url %>" >          
+        <img height="48" width="48" src="<%= album.headline_thumbnail_32_url %>" >
+        <img height="0" width="0" src="<%= album.flickbook_url %>" style="display:none">          
       </li>
     </a>
     <% end %>

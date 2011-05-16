@@ -13,6 +13,7 @@ gem 'jquery-rails'
 
 # Use unicorn as the web server
 gem 'unicorn'
+#gem 'friendly_id', :git => 'https://github.com/norman/friendly_id.git', :branch => "edge"
 
 group :production  do
   gem "pg"

@@ -6,6 +6,7 @@ class Photo < ActiveRecord::Base
 
   scope :landscape, where("photos.is_landscape = 'true'")
   scope :portrait, where("photos.is_landscape = 'false'")
+  scope :are_cropped, where("photos.is_cropped = 'false'")
     
   def self.random
     if (c = count) > 0

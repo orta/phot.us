@@ -1,6 +1,5 @@
-class Album < ActiveRecord::Base
+class Album < ActiveRecord::Base  
   has_many :photos
-  
   validates_presence_of :name, :description, :flickbook_url
   
   def shuffle_thumbnail!
