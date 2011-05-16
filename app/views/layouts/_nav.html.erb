@@ -1,6 +1,6 @@
 <header>
   <ul>
-    <% Album.all.each do |album| %>
+    <% Album.find_all_by_photographer( request.subdomain ).each do |album| %>
     <a href="/albums/<%= album.id %>">
       <li data-album-name="<%= album.name %>" data-album-flickbook="<%= album.flickbook_url %>">
         <img height="48" width="48" src="<%= album.headline_thumbnail_32_url %>" >

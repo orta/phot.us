@@ -2,8 +2,10 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.all
-    @first_6_albums = @albums.shift 6
+    @albums = Album.find_all_by_photographer(request.subdomain)
+    if @albums.size > 6
+      @first_6_albums = @albums.shift 6
+    end
 
     respond_to do |format|
       format.html # index.html.erb

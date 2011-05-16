@@ -50,4 +50,6 @@ module Photos
     # Enable the asset pipeline
     config.assets.enabled = true
   end
+  require File.dirname(__FILE__) + '/../lib/subdomain'
+  
 end
