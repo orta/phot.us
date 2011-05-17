@@ -4,7 +4,7 @@ class Album < ActiveRecord::Base
   
   def shuffle_thumbnail!
     photo =  photos.landscape.random
-    self.headline_photo_url = photo.thumbnail_320_url
+    self.headline_photo_url = photo.thumbnail_1024_url
     self.headline_thumbnail_32_url = photo.thumbnail_320_url
     self.save!
   end

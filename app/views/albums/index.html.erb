@@ -1,7 +1,7 @@
 <% if @first_6_albums %>
   <% @first_6_albums.each do |headline_album|   %>
 
-    <%= headline_album %>
+    <%= image_tag headline_album.headline_photo_url %>
 
   <% end %>
 <% end %>
