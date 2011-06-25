@@ -8,6 +8,12 @@
   		Code.PhotoSwipe.Current.show(0);
     }, false);
   </script>
+  <article id="photos" class="hidden">
+    <% @layouts.each do | layout | %>
+      <%= raw layout.render %>
+    <% end %>
+  </article>
+  
   
 <% else %>
 
@@ -26,7 +32,6 @@ $(function(){
     <h2><%= @album.description %></h2>
     <h2><%= @album.photographer %></h2>
   </header>  
-<% end %>
   <article id="photos">
     <% @layouts.each do | layout | %>
       <%= raw layout.render %>
@@ -34,3 +39,4 @@ $(function(){
   </article>
 
 </section>
+<% end %>
