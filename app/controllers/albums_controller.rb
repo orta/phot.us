@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.find_all_by_photographer( "orta" )
+    @albums = Album.find_all_by_photographer( @owner )
     if @albums.size > 6
       @first_6_albums = @albums.shift 6
     end

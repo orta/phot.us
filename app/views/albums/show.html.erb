@@ -1,18 +1,25 @@
 
 
-<section id="album">
-<header>
-  <h1><%= @album.name %></h1>  
-  <h2><%= @album.description %></h2>
-  <h2><%= @album.photographer %></h2>
-  <h3><%= @album.created_at %></h3>
-</header>  
 
-<article>
-  <% @layouts.each do | layout | %>
-    <%= raw layout.render %>
-  <% end %>
-</article>
+<section id="album">
+  <header>
+    <img id="layout_toggle" src= "<%= image_path "layoutswitch.jpg" %>">
+    <h1><%= @album.name %></h1>  
+    <h3><%= @album.created_at %></h3>
+    <h2><%= @album.description %></h2>
+    <h2><%= @album.photographer %></h2>
+    <% if @is_mobile %>
+    mobile
+    <% else %>
+    not mobile
+    <% end %>
+  </header>  
+
+  <article>
+    <% @layouts.each do | layout | %>
+      <%= raw layout.render %>
+    <% end %>
+  </article>
 
 </section>
 

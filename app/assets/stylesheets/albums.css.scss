@@ -1,8 +1,21 @@
 section#album {
+  article{
+    background-color: black;
+    padding: 12px;		
+
+  }
   margin: 0 auto;
-  background-color: black;
-  width:1024px;
-  padding: 12px;
+  width:1048px;
+
+  img#layout_toggle{
+    float:right;
+    margin-top:16px;
+    cursor: pointer;
+  }
+
+  h3{
+    float:right;
+  }
 
   .photos_3 {
     margin: 24px 0 24px 24px;
@@ -11,5 +24,4 @@ section#album {
   .photos_5 {
     margin: 24px 0 24px 24px;
   }
-
 }
