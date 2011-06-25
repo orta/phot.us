@@ -1,6 +1,6 @@
 class Album < ActiveRecord::Base  
   has_many :photos
-  validates_presence_of :name, :description, :flickbook_url
+  validates_presence_of :name, :description, :flickbook_url, :photographer
   
   def shuffle_thumbnail!
     photo =  photos.landscape.random

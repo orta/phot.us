@@ -15,12 +15,12 @@ class Photo < ActiveRecord::Base
   end
   
   def thumb_1024_html
-    wrap_in_a "<img src='#{ thumbnail_1024_url }'>"
+    with_link "<img src='#{ thumbnail_1024_url }'>"
   end
   
   def full_image_html (options={})
     if( options[:height] && options[:width] )
-      return wrap_in_a "<img src='#{ thumbnail_320_url }' height='#{ options[:height] }' width='#{ options[:width] }'>"
+      return with_link "<img src='#{ thumbnail_320_url }' height='#{ options[:height] }' width='#{ options[:width] }'>"
     end
   end
 
@@ -30,7 +30,7 @@ class Photo < ActiveRecord::Base
 
  private
  
- def wrap_in_a content
+ def with_link content
    content
  end
 
