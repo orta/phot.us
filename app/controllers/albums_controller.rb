@@ -18,7 +18,11 @@ class AlbumsController < ApplicationController
   def show
     @album = Album.find(params[:id])
     if @album
-      @layouts = @album.create_layouts      
+      if @is_mobile
+        @layouts = @album.mobile_layouts
+      else
+        @layouts = @album.create_layouts      
+      end
     end
 
     respond_to do |format|

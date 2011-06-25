@@ -31,7 +31,7 @@ class Photo < ActiveRecord::Base
  private
  
  def with_link content
-   content
+   "<a href='#{ thumbnail_1024_url }'>" + content + "</a>"
  end
 
 end

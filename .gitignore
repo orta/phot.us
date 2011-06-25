@@ -2,7 +2,7 @@
 db/*.sqlite3
 log/*.log
 tmp/
-vendor/
+vendor/ruby/
 .DS_Store
 .sass-cache/
 .sass-cache

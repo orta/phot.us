@@ -1,55 +1,36 @@
-
-
-
 <section id="album">
+
+<% if @is_mobile || params[:mobile] %>
+
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function(){    
+      Code.photoSwipe('a', '#photos');
+  		Code.PhotoSwipe.Current.show(0);
+    }, false);
+  </script>
+  
+<% else %>
+
+<script type="text/javascript">
+$(function(){
+  $("#layout_toggle").click(function(){
+    Code.photoSwipe('a', '#photos');
+		Code.PhotoSwipe.Current.show(0);
+  })
+})
+</script>
   <header>
     <img id="layout_toggle" src= "<%= image_path "layoutswitch.jpg" %>">
     <h1><%= @album.name %></h1>  
     <h3><%= @album.created_at %></h3>
     <h2><%= @album.description %></h2>
     <h2><%= @album.photographer %></h2>
-    <% if @is_mobile %>
-    mobile
-    <% else %>
-    not mobile
-    <% end %>
   </header>  
-
-  <article>
+<% end %>
+  <article id="photos">
     <% @layouts.each do | layout | %>
       <%= raw layout.render %>
     <% end %>
   </article>
 
 </section>
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @album.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @album.description %>
-</p>
-
-<p>
-  <b>Safe name:</b>
-  <%= @album.safe_name %>
-</p>
-
-<p>
-  <b>Flickbook url:</b>
-  <%= @album.flickbook_url %>
-</p>
-
-<p>
-  <b>Photographer:</b>
-  <%= @album.photographer %>
-</p>
-
-
-<%= link_to 'Edit', edit_album_path(@album) %> |
-<%= link_to 'Back', albums_path %>

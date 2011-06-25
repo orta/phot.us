@@ -9,11 +9,20 @@ class Album < ActiveRecord::Base
     self.save!
   end
 
+  def mobile_layouts
+    make_layouts_with_classes  [LayoutMobile]
+  end
+  
   def create_layouts
+    make_layouts_with_classes  [LayoutHeadline, LayoutThreeInARow]
+  end
+  
+  private 
+  
+  def make_layouts_with_classes layouts
     temp_photos = photos
     layout_list = []
     until temp_photos.empty?
-      layouts =  [LayoutHeadline, LayoutThreeInARow]
       layout_class = layouts[(rand layouts.size)]
       layout = layout_class.new
       if layout.can_take_photos_from? temp_photos
