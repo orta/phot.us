@@ -4,7 +4,12 @@
 
   <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function(){    
-      Code.photoSwipe('a', '#photos');
+      Code.photoSwipe('a', '#photos', {
+        onShow: function(){ },
+        onHide: function(){
+          document.location = "<%= albums_path %>"
+        }
+      })
   		Code.PhotoSwipe.Current.show(0);
     }, false);
   </script>
@@ -20,7 +25,16 @@
 <script type="text/javascript">
 $(function(){
   $("#layout_toggle").click(function(){
-    Code.photoSwipe('a', '#photos');
+    Code.photoSwipe('a', '#photos', {
+      onShow: function(){
+        $("#photos").css("display", "none")
+
+      },
+      onHide: function(){
+        $("#photos").css("display", "block")
+      }
+      
+    });
 		Code.PhotoSwipe.Current.show(0);
   })
 })
